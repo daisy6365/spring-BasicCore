@@ -58,7 +58,7 @@ public class ApplicationContextExtendsFindTest {
     }
 
     @Test
-    @DisplayName("부모타입으로 모두 조회한다. - Object")
+    @DisplayName("부모타입으로 모두 조회한다. - Object(상속관계)")
     // 스프링 내부적으로 등록한 모든 Object의 bean들이 조회됨
     void findAllBeanByObejectType(){
         Map<String, Object> beansOfType = ac.getBeansOfType(Object.class);

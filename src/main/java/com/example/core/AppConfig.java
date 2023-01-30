@@ -13,7 +13,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration // application의 설정정보임을 밝힘
+// @Configuration을 하면 AppConfig자체가 스프링 빈으로 등록됨
 public class AppConfig {
+
+    // 싱글톤 컨테이너
+    // @Bean memberService -> new MemoryMemberRepository를 호출
+    // @Bean orderService -> new OrderServiceImpl -> new MemoryMemberRepository를 호출 ==> 각각 다른 MemoryMemberRepository를 생성
+    // --> Singletone이 깨지나..? !!!안깨짐!!!
+
 
     @Bean // spring 컨테이너에 spring bean으로 등록됨
     public MemberService memberService(){
